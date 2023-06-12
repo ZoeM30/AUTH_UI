@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
-import { Dimensions, StyleSheet, View, Text } from 'react-native'
+import { Dimensions, StyleSheet, View, Text } from 'react-native';
+import Colors from './colors';
 
 
 const { height, width } = Dimensions.get('screen');
@@ -23,7 +24,7 @@ export default App;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#000',
+        backgroundColor: Colors.button_background,
         alignItems: 'center',
         width: width / 1.1,
         justifyContent: 'center',
@@ -34,6 +35,6 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        color: '#fff'
+        color: Colors.button_text,
     }
 })
