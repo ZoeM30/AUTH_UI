@@ -1,9 +1,25 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native'
-const App: FunctionComponent = () => {
+import { Input, Button } from '../components';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+const App: FunctionComponent = (props) => {
+    const [email, setEmail] = useState<string | null>(null);
+    const [Password, setPassword] = useState<string | null>(null);
+
     return (
         <View style={styles.container}>
             <Text>Login</Text>
+            <Input placeholder="Email" onChangeText={(text) => setEmail(text)} />
+            <Input placeholder="Password" secureTextEntry onChangeText={(text) => setPassword(text)} />
+            <Button title="Sign Up" onPress={() => alert(`Pressed`)} />
+            <View style={styles.loginLink}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('signup')}>
+                    <Text style={{ textDecorationLine: 'underline' }}>
+                        Sign up
+                    </Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -14,5 +30,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: "center"
+    },
+    loginLink: {
+        flexDirection: 'row',
+        marginVertical: 20,
     }
 })
