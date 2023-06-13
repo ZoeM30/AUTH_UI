@@ -9,7 +9,7 @@ const App: FunctionComponent = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text>Login</Text>
+            <Text style={styles.title}>Login</Text>
             <Input placeholder="Email" onChangeText={(text) => setEmail(text)} />
             <Input placeholder="Password" secureTextEntry onChangeText={(text) => setPassword(text)} />
             <Button title="Sign Up" onPress={() => alert(`Pressed`)} />
@@ -34,5 +34,8 @@ const styles = StyleSheet.create({
     loginLink: {
         flexDirection: 'row',
         marginVertical: 20,
+    },
+    title: {
+        fontSize: 32,
     }
 })
