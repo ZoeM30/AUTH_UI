@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native'
-import { Input, Button } from '../components';
+import { View, Text, StyleSheet, Image } from 'react-native'
+import { Input, Button, Colors, AltButton, HorizontalDivider } from '../components';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
@@ -14,7 +14,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Text>Login</Text>
+            <Text style={styles.title}>Login</Text>
             <Input placeholder="Email" onChangeText={(text) => setEmail(text)} />
             <Input placeholder="Password" secureTextEntry onChangeText={(text) => setPassword(text)} />
             <Button title="Sign Up" onPress={() => alert(`Pressed`)} />
@@ -32,6 +32,8 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
                     </Text>
                 </TouchableOpacity>
             </View>
+            <HorizontalDivider />
+            <AltButton title="Continue with Google" onPress={() => alert(`Pressed`)} />
         </View>
     )
 }
@@ -47,5 +49,12 @@ const styles = StyleSheet.create({
     link: {
         flexDirection: 'row',
         marginVertical: 20,
+    },
+    title: {
+        fontSize: 32,
+    },
+    separator: {
+        fontSize: 14,
+        color: Colors.placeholder
     }
 })

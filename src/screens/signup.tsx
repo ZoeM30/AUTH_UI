@@ -1,22 +1,24 @@
 import React, { FunctionComponent } from 'react';
 import { View, Text, StyleSheet } from 'react-native'
-import { Input, Button } from '../components';
+import { Input, Button, AltButton, Colors, HorizontalDivider } from '../components';
 import { useState } from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
+
 
 type SignUpScreenProps = {
     navigation: StackNavigationProp<RootStackParamList, 'SignUp'>;
   };
 
 const SignUpScreen: React.FC<SignUpScreenProps> = ({ navigation }) => {
+
     const [email, setEmail] = useState<string | null>(null);
     const [Password, setPassword] = useState<string | null>(null);
 
     return (
         <View style={styles.container}>
-            <Text>Sign up</Text>
+            <Text style={styles.title}>Sign up</Text>
             <Input placeholder="Email" onChangeText={(text) => setEmail(text)} />
             <Input placeholder="Password" secureTextEntry onChangeText={(text) => setPassword(text)} />
             
@@ -28,6 +30,8 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({ navigation }) => {
                     </Text>
                 </TouchableOpacity>
             </View>
+            <HorizontalDivider />
+            <AltButton title="Continue with Google" onPress={() => alert(`Pressed`)} />
         </View>
     )
 }
@@ -42,5 +46,12 @@ const styles = StyleSheet.create({
     loginLink: {
         flexDirection: 'row',
         marginVertical: 20,
+    },
+    title: {
+        fontSize: 32,
+    },
+    separator: {
+        fontSize: 14,
+        color: Colors.placeholder
     }
 })
