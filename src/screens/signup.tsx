@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { View, Text, StyleSheet } from 'react-native'
-import { Input, Button } from '../components';
+import { Input, Button, AltButton, Colors, HorizontalDivider } from '../components';
 import { useState } from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
 
 const App: FunctionComponent = (props) => {
     const [email, setEmail] = useState<string | null>(null);
@@ -22,6 +21,8 @@ const App: FunctionComponent = (props) => {
                     </Text>
                 </TouchableOpacity>
             </View>
+            <HorizontalDivider />
+            <AltButton title="Continue with Google" onPress={() => alert(`Pressed`)} />
         </View>
     )
 }
@@ -39,5 +40,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 32,
+    },
+    separator: {
+        fontSize: 14,
+        color: Colors.placeholder
     }
 })

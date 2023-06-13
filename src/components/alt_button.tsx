@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
-import { Dimensions, StyleSheet, View, Text } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, Image } from 'react-native';
 import Colors from './colors';
 
 
@@ -12,7 +12,7 @@ interface Props {
 
 }
 
-const Button: FC<Props> = (props) => {
+const AltButton: FC<Props> = (props) => {
     return (
         <TouchableOpacity style={styles.container}>
             <Text style={styles.text}>{props.title}</Text>
@@ -20,11 +20,11 @@ const Button: FC<Props> = (props) => {
     )
 }
 
-export default Button;
+export default AltButton;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Colors.button_background,
+        backgroundColor: Colors.input_background,
         alignItems: 'center',
         width: width / 1.1,
         justifyContent: 'center',
@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        color: Colors.button_text,
+        color: Colors.main_text,
     }
 })
