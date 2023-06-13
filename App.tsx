@@ -8,6 +8,7 @@ import SignUpScreen from './src/screens/signup';
 import LoginScreen from './src/screens/login';
 import ResetPasswordScreen from './src/screens/resetPassword';
 import ForgotPasswordScreen from './src/screens/forgotPassword';
+import HomeScreen from './src/screens/home';
 
 
 // export default function App() {
@@ -26,6 +27,7 @@ const App = () => {
           component={SplashScreen}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}} />
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown:false}} />
         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Forgot" component={ForgotPasswordScreen} options={{headerShown:false}}/>

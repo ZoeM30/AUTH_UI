@@ -17,7 +17,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
             <Text style={styles.title}>Login</Text>
             <Input placeholder="Email" onChangeText={(text) => setEmail(text)} />
             <Input placeholder="Password" secureTextEntry onChangeText={(text) => setPassword(text)} />
-            <Button title="Sign Up" onPress={() => alert(`Pressed`)} />
+            <Button title="Login" onPress={() => alert(`Pressed`)} />
             <View style={styles.link}>
                 <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
                     <Text style={{ textDecorationLine: 'underline' }}>
