@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { View, Text, StyleSheet } from 'react-native'
-const App: FunctionComponent = () => {
+
+const Home: FunctionComponent = () => {
     return (
         <View style={styles.container}>
             <Text>Home screen</Text>
@@ -8,7 +9,7 @@ const App: FunctionComponent = () => {
     )
 }
 
-export default App;
+export default Home;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
