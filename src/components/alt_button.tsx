@@ -15,6 +15,7 @@ interface Props {
 const AltButton: FC<Props> = (props) => {
     return (
         <TouchableOpacity style={styles.container}>
+            <Image source={require('../../assets/google_black.png')} style={styles.image} />
             <Text style={styles.text}>{props.title}</Text>
         </TouchableOpacity>
     )
@@ -24,9 +25,11 @@ export default AltButton;
 
 const styles = StyleSheet.create({
     container: {
+        flexDirection: 'row',
         backgroundColor: Colors.input_background,
         alignItems: 'center',
         width: width / 1.1,
+        height: height / 15,
         justifyContent: 'center',
         alignSelf: 'center',
         padding: 18,
@@ -36,5 +39,12 @@ const styles = StyleSheet.create({
 
     text: {
         color: Colors.main_text,
+        fontSize: 16
+    },
+
+    image: {
+        height: 25,
+        width: 25,
+        marginRight: 10,
     }
 })

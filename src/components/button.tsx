@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.button_background,
         alignItems: 'center',
         width: width / 1.1,
+        height: height / 15,
         justifyContent: 'center',
         alignSelf: 'center',
         padding: 18,
@@ -36,5 +37,6 @@ const styles = StyleSheet.create({
 
     text: {
         color: Colors.button_text,
+        fontSize: 16,
     }
 })
