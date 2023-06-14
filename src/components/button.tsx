@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         padding: 18,
         borderRadius: 5,
-        marginVertical: 10
+        marginVertical: 20
     },
 
     text: {
         color: Colors.button_text,
-        fontSize: 16,
+        fontSize: 18,
     }
 })

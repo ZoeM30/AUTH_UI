@@ -10,7 +10,7 @@ type SplashScreenProps = {
 const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
   const [wordIndex, setWordIndex] = useState(0);
   const [letterIndex, setLetterIndex] = useState(0);
-  const words = ['Simplify', 'Achieve', 'React Native'];
+  const words = ['Simplify', 'Achieve', 'Zenitha'];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,7 +20,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
         setWordIndex(wordIndex + 1);
         setLetterIndex(0);
       } else {
-        navigation.replace('SignUp');
+        navigation.replace('Home');
       }
     }, 200);
     return () => clearTimeout(timer);
@@ -31,7 +31,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
       <Text style={styles.text}>
         {words[wordIndex].substring(0, letterIndex + 1)}
       </Text>
-      <Image source={require('../../assets/logo.png')} />
+      <Image source={require('../../assets/logo.png')} style={styles.image} />
     </View>
   );
 };
@@ -48,4 +48,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  image: {
+    marginTop: 30,
+
+  }
 });
