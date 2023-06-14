@@ -20,6 +20,8 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
             <Input placeholder="Email" onChangeText={(text) => setEmail(text)} />
             <Input placeholder="Password" secureTextEntry onChangeText={(text) => setPassword(text)} />
             <Button title="Login" onPress={() => alert(`Pressed`)} />
+            {/* const login =async (params:type) => */}
+            {/* <Button title="Login" onPress={login} /> */}
             <View style={styles.link}>
                 <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
                     <Text style={styles.link_text}>
