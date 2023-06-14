@@ -37,7 +37,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         <Pressable onPress={() => navigation.navigate('SignUp')}>
           <Button title="Sign Up with Email" onPress={() => navigation.navigate('SignUp')} />
         </Pressable>
-        <Pressable onPress={() => navigation.navigate('Login')}>
+        <Pressable onPress={() => navigation.navigate('Login')} style={styles.button_bottom}>
           <Button title="Login" onPress={() => navigation.navigate('Login')} />
         </Pressable>
       </View>
@@ -60,6 +60,9 @@ const styles = StyleSheet.create({
   button_container: {
     flex: 1,
     justifyContent: 'flex-end'
+  },
+  button_bottom: {
+    marginTop: -20,
   }
 });
 
