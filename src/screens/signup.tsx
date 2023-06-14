@@ -9,7 +9,7 @@ import { RootStackParamList } from '../types';
 
 type SignUpScreenProps = {
     navigation: StackNavigationProp<RootStackParamList, 'SignUp'>;
-  };
+};
 
 const SignUpScreen: React.FC<SignUpScreenProps> = ({ navigation }) => {
 
@@ -21,7 +21,7 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({ navigation }) => {
             <Text style={styles.title}>Sign up</Text>
             <Input placeholder="Email" onChangeText={(text) => setEmail(text)} />
             <Input placeholder="Password" secureTextEntry onChangeText={(text) => setPassword(text)} />
-            
+
             <Button title="Sign Up" onPress={() => alert(`Pressed`)} />
             <View style={styles.loginLink}>
                 <TouchableOpacity onPress={() => navigation.navigate('Login')}>
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 32,
+        marginBottom: 10,
     },
     separator: {
         fontSize: 14,

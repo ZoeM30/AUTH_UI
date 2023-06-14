@@ -1,13 +1,15 @@
 import React, { FunctionComponent, useState } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'
 import { Input, Button, Colors, AltButton, HorizontalDivider } from '../components';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
 
+const { height, width } = Dimensions.get('screen');
+
 type LoginScreenProps = {
     navigation: StackNavigationProp<RootStackParamList, 'Login'>;
-  };
+};
 const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
     const [email, setEmail] = useState<string | null>(null);
     const [Password, setPassword] = useState<string | null>(null);
@@ -20,14 +22,12 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
             <Button title="Login" onPress={() => alert(`Pressed`)} />
             <View style={styles.link}>
                 <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
-                    <Text style={{ textDecorationLine: 'underline' }}>
+                    <Text style={styles.link_text}>
                         Forgot Password?
                     </Text>
                 </TouchableOpacity>
-            </View>
-            <View style={styles.link}>
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                    <Text style={{ textDecorationLine: 'underline' }}>
+                    <Text style={styles.link_text}>
                         Sign up
                     </Text>
                 </TouchableOpacity>
@@ -52,9 +52,16 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 32,
+        marginBottom: 10,
     },
     separator: {
         fontSize: 14,
         color: Colors.placeholder
+    },
+    link_text: {
+        textDecorationLine: 'underline',
+        color: Colors.main_text,
+        fontSize: 14,
+        marginHorizontal: width / 10,
     }
 })

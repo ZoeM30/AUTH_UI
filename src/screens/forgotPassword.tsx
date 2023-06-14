@@ -1,36 +1,38 @@
-import React, {useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native'
-import { Input, Button } from '../components';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Dimensions, Pressable } from 'react-native'
+import { Input, Button, Colors } from '../components';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
 
+const { height, width } = Dimensions.get('screen');
+
 type ForgotPasswordScreenProps = {
-    navigation:StackNavigationProp<RootStackParamList, 'Forgot'>;
+    navigation: StackNavigationProp<RootStackParamList, 'Forgot'>;
 };
 
-const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = ({navigation}) =>{
+const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = ({ navigation }) => {
     const [email, setEmail] = useState<string | null>(null);
 
 
     return (
         <View style={styles.container}>
-            <Text>Forgot Password?</Text>
-            <Text>Don't worry, enter your email and we'll send you a verification code.</Text>
+            <Text style={styles.title}>Forgot Password?</Text>
+            <Text style={styles.small_text}>Don't worry, enter your email and we'll send you a verification code.</Text>
             <Input placeholder="Email" onChangeText={(text) => setEmail(text)} />
 
+            <Pressable onPress={() => navigation.navigate('Verify')}>
+                <Button title="Send" onPress={() => navigation.navigate('Verify')} />
+            </Pressable>
 
-            <Button title="Send" onPress={() => alert(`Pressed`)} />
             <View style={styles.link}>
                 <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                    <Text style={{ textDecorationLine: 'underline' }}>
+                    <Text style={styles.link_text}>
                         Login
                     </Text>
                 </TouchableOpacity>
-            </View>
-            <View style={styles.link}>
                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                    <Text style={{ textDecorationLine: 'underline' }}>
+                    <Text style={styles.link_text}>
                         Sign Up
                     </Text>
                 </TouchableOpacity>
@@ -49,5 +51,19 @@ const styles = StyleSheet.create({
     link: {
         flexDirection: 'row',
         marginVertical: 20,
+    },
+    link_text: {
+        textDecorationLine: 'underline',
+        color: Colors.main_text,
+        fontSize: 14,
+        marginHorizontal: width / 10,
+    },
+    title: {
+        fontSize: 32,
+        marginBottom: 10,
+    },
+    small_text: {
+        marginBottom: 10,
+        fontSize: 16,
     }
 })
