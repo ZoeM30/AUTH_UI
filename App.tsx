@@ -12,6 +12,7 @@ import HomeScreen from './src/screens/home';
 import VerifyEmailScreen from './src/screens/verifyEmail';
 
 
+
 // export default function App() {
 //   return (
 //     <MainNav />
@@ -28,12 +29,14 @@ const App = () => {
           component={SplashScreen}
           options={{ headerShown: false }}
         />
+
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Forgot" component={ForgotPasswordScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Reset" component={ResetPasswordScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Verify" component={VerifyEmailScreen} options={{ headerShown: false }} />
+
 
         {/* Add other screens here */}
       </Stack.Navigator>

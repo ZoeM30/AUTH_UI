@@ -5,6 +5,7 @@ import { RootStackParamList } from '../types';
 
 
 type SplashScreenProps = {
+
   navigation: StackNavigationProp<RootStackParamList, 'Splash'>;
 };
 const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
@@ -53,3 +54,4 @@ const styles = StyleSheet.create({
 
   }
 });
+

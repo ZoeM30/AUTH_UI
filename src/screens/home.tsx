@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+
 import { View, Text, StyleSheet, Pressable } from 'react-native';
+
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
 import { Button } from '../components';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 type HomeScreenProps = {
+
   navigation: StackNavigationProp<RootStackParamList, 'Home'>;
 };
 const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
@@ -59,3 +62,4 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   }
 });
+
